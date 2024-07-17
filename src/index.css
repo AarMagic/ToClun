@@ -1,13 +1,223 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --primary: #4D0090;
+  --secundary: #01FF71;
+  --fontTitle: "Roboto Mono", monospace;
+  --fontText: "Roboto", sans-serif;
+  --primary-opacity: rgba(77, 0, 144, .94);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body{
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fontText);
+  font-weight: bolder;
+  font-style: italic
+}
+
+p,
+button,
+label,
+textarea,
+input {
+  font-family: var(--fontText);
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+label {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary);
+  padding: 1.2em 2em;
+}
+
+.header h1 {
+  margin-bottom: 20px;
+  font-size: 80px;
+  color: var(--secundary);
+}
+
+.header__social {
+  display: flex;
+  gap: 50px;
+}
+
+.icon {
+  width: 50px;
+  background-color: var(--secundary);
+}
+
+.custom-bar {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 40px;
+  background-color: var(--secundary);
+  cursor: pointer;
+  border: transparent;
+  border-radius: 0 0 15px 15px;
+}
+
+.bar * {
+  fill: var(--primary);
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5em;
+  min-height: 100%;
+  margin-top: 3em;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2em;
+}
+
+.card {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 22em;
+  background-color: var(--primary);
+  padding: 2em;
+  gap: 1em;
+  border-radius: 1em;
+  border: none;
+  outline: none;
+}
+
+.card * {
+  color: var(--secundary);
+}
+
+.card__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__icon {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__icon * {
+  fill: var(--secundary);
+  cursor: pointer;
+}
+
+.card_button, .button {
+  height: 3.5em;
+  border-radius: .7em;
+  border: none;
+  outline: none;
+  color: var(--primary);
+  background-color: var(--secundary);
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.bg-form {
+  background-color: var(--primary-opacity);
+  z-index: 100;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 2em;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  gap: 2em;
+  width: 100%;
+}
+
+.form h3 {
+  color: var(--secundary);
+  font-size: 3em;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5em;
+  color: var(--secundary);
+  min-width: 80%;
+}
+
+.form input,
+textarea{
+  float: right;
+  max-width: 40em;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 1em;
+  padding: 1em;
+  font-weight: 500;
+}
+
+.form input {
+  height: 3em;
+}
+
+.form textarea {
+  resize: vertical;
+  height: 10em;
+}
+
+.form .button{
+  max-width: 33.3em;
+  width: 80%;
+}
+
+.form-close{
+  float: right;
+  fill: var(--secundary);
+  cursor: pointer;
+}
+
+.error{
+  color: red;
+  font-weight: bold;
 }
