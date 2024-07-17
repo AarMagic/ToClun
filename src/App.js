@@ -5,23 +5,23 @@ import { CardComponent } from './components/CardComponent';
 import { useEffect, useState } from 'react';
 
 function App() {
-  const [taskList, setTaskListState] = useState([]);
+  const [taskListState, setTaskListState] = useState([]);
 
-  useEffect(() => {
-    let taskListStorage = JSON.parse(localStorage.getItem("taskList"));
-    if (taskListStorage !== null) {
-      setTaskListState(taskListStorage);
-    }
+  useEffect(() => {    
+    let tasks = JSON.parse(localStorage.getItem("taskList"));
+      if (tasks !== null) {
+        setTaskListState(tasks);
+      }
   }, [])
 
   return (
     <div className="App">
-      <CustomBar taskList={taskList} setTaskListState={setTaskListState} />
+      <CustomBar taskList={taskListState} setTaskListState={setTaskListState} />
       <main>
         <section className="cards">
-          {taskList.length > 0 && (
-            taskList.map((task) => {
-              return <CardComponent task={task} key={task.id} />;
+          {taskListState.length > 0 && (
+            taskListState.map((task) => {
+              return <CardComponent key={task.id} task={task} taskList={taskListState} setTaskListState={setTaskListState} />;
             })
           )}
         </section>
