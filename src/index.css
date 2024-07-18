@@ -1,9 +1,9 @@
 :root {
   --primary: #4D0090;
-  --secundary: #01FF71;
+  --secondary: #01FF71;
   --fontTitle: "Roboto Mono", monospace;
   --fontText: "Roboto", sans-serif;
-  --primary-opacity: rgba(77, 0, 144, .94);
+  --primary-opacity: rgba(77, 0, 144, 0.959);
 }
 
 html {
@@ -62,7 +62,7 @@ label {
 .header h1 {
   margin-bottom: 20px;
   font-size: 80px;
-  color: var(--secundary);
+  color: var(--secondary);
 }
 
 .header__social {
@@ -72,7 +72,7 @@ label {
 
 .icon {
   width: 50px;
-  background-color: var(--secundary);
+  background-color: var(--secondary);
 }
 
 .custom-bar {
@@ -86,7 +86,7 @@ label {
   align-items: center;
   width: 30%;
   height: 40px;
-  background-color: var(--secundary);
+  background-color: var(--secondary);
   cursor: pointer;
   border: transparent;
   border-radius: 0 0 15px 15px;
@@ -122,7 +122,7 @@ label {
 }
 
 .card * {
-  color: var(--secundary);
+  color: var(--secondary);
 }
 
 .card__header {
@@ -138,7 +138,7 @@ label {
 }
 
 .card__icon * {
-  fill: var(--secundary);
+  fill: var(--secondary);
   cursor: pointer;
 }
 
@@ -148,7 +148,7 @@ label {
   border: none;
   outline: none;
   color: var(--primary);
-  background-color: var(--secundary);
+  background-color: var(--secondary);
   font-size: 1em;
   cursor: pointer;
 }
@@ -177,7 +177,7 @@ label {
 }
 
 .form h3 {
-  color: var(--secundary);
+  color: var(--secondary);
   font-size: 3em;
 }
 
@@ -186,7 +186,7 @@ label {
   flex-direction: column;
   align-items: center;
   gap: .5em;
-  color: var(--secundary);
+  color: var(--secondary);
   min-width: 80%;
 }
 
@@ -218,7 +218,7 @@ textarea{
 
 .form-close{
   float: right;
-  fill: var(--secundary);
+  fill: var(--secondary);
   cursor: pointer;
 }
 
@@ -226,3 +226,39 @@ textarea{
   color: red;
   font-weight: bold;
 }
+
+ .config{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 90%;
+  overflow: scroll;
+  border: 1px solid black;
+  background-color: var(--primary);
+}
+
+.config .config-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
+
+
+.config .themes {
+  display: flex;
+  width: 100%;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2em;
+}
+
+.config h2{
+  color: var(--secondary);
+}
+
+.config .card{
+  width: 20em;
+}
+
